@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snappy.Common", "Sources\Snappy.Common\Snappy.Common.csproj", "{B3B2A381-7938-43F0-8C61-9EB7BE11D6F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snappy.Common.Tests", "Tests\Snappy.Common.Tests\Snappy.Common.Tests.csproj", "{F145ECA6-61BE-41B1-9575-42059DB15D37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3B2A381-7938-43F0-8C61-9EB7BE11D6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B2A381-7938-43F0-8C61-9EB7BE11D6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B2A381-7938-43F0-8C61-9EB7BE11D6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B2A381-7938-43F0-8C61-9EB7BE11D6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F145ECA6-61BE-41B1-9575-42059DB15D37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F145ECA6-61BE-41B1-9575-42059DB15D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F145ECA6-61BE-41B1-9575-42059DB15D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F145ECA6-61BE-41B1-9575-42059DB15D37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9A23004-0842-4F84-8F66-7C899611746A}
+	EndGlobalSection
+EndGlobal
