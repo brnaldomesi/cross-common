@@ -46,7 +46,7 @@ namespace Snappy.Common.Tests.Helpers
             var helper = GetDatetimeHelper();
 
             // act
-            var result = helper.GetNowAsString(DATE_FORMAT_PATTERN);
+            var result = helper.GetNowAsString(TIME_FORMAT_PATTERN);
 
             // assert
             Assert.AreEqual(result, InstantPattern.CreateWithInvariantCulture(TIME_FORMAT_PATTERN).Format(GetFakeNow()));
