@@ -34,5 +34,10 @@ namespace Snappy.Common.Helpers
         {
             return InstantPattern.CreateWithInvariantCulture(format ?? DATE_FORMAT_PATTERN).Format(GetNow());
         }
+
+        public Instant GetInstantFromString(string date, string format = null)
+        {
+            return InstantPattern.CreateWithInvariantCulture(format ?? DATE_FORMAT_PATTERN).Parse(date).Value;
+        }
     }
 }

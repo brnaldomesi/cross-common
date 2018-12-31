@@ -1,4 +1,5 @@
-﻿using NodaTime;
+﻿using System.Collections.Specialized;
+using NodaTime;
 using NodaTime.Testing;
 using NodaTime.Text;
 using NUnit.Framework;
@@ -63,6 +64,19 @@ namespace Snappy.Common.Tests.Helpers
 
             // assert
             Assert.AreEqual(result, InstantPattern.CreateWithInvariantCulture(DATE_FORMAT_PATTERN).Format(GetFakeNow()));
+        }
+        [Test]
+        [TestCase("2020-01-01")]
+        public void DatetimeHelper_GetInstantFromString(string date)
+        {
+            // arrange
+            var helper = GetDatetimeHelper();
+
+            // act
+            var result = helper.GetInstantFromString(date);
+
+            // assert
+            Assert.AreEqual(result, InstantPattern.CreateWithInvariantCulture(DATE_FORMAT_PATTERN).Parse(date).Value);
         }
 
         private Instant GetFakeNow()
