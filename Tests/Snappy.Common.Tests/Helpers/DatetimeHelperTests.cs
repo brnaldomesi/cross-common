@@ -33,7 +33,7 @@ namespace Snappy.Common.Tests.Helpers
             var helper = GetDatetimeHelper();
 
             // act
-            var result = helper.GetString(helper.GetNow(),DATE_FORMAT_PATTERN);
+            var result = helper.GetString(helper.GetNow(), DATE_FORMAT_PATTERN);
 
             // assert
             Assert.AreEqual(result, InstantPattern.CreateWithInvariantCulture(DATE_FORMAT_PATTERN).Format(GetFakeNow()));
@@ -76,6 +76,5 @@ namespace Snappy.Common.Tests.Helpers
             var helper = new DatetimeHelper(clock);
             return helper;
         }
-
     }
 }
