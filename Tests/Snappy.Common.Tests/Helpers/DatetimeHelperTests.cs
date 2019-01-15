@@ -1,5 +1,4 @@
-﻿using System.Collections.Specialized;
-using NodaTime;
+﻿using NodaTime;
 using NodaTime.Testing;
 using NodaTime.Text;
 using NUnit.Framework;
