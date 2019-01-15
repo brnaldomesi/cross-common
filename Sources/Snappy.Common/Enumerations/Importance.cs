@@ -1,4 +1,6 @@
-﻿namespace Snappy.Common.Enumerations
+﻿using Snappy.Common.Enumerations.Base;
+
+namespace Snappy.Common.Enumerations
 {
     public class Importance : Enumeration
     {

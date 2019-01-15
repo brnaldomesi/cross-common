@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Snappy.Common.Enumerations
+namespace Snappy.Common.Enumerations.Base
 {
     [Serializable]
     public abstract class Enumeration : IComparable

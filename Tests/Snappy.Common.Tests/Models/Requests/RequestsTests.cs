@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
-
 using Snappy.Common.Models.Requests;
 
-namespace Snappy.Common.Tests.Models.DataTransferObjects
+namespace Snappy.Common.Tests.Models.Requests
 {
     [TestFixture]
     public class RequestsTests

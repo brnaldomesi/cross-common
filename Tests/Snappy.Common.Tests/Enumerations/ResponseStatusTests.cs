@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 
 using Snappy.Common.Enumerations;
+using Snappy.Common.Enumerations.Base;
 
 namespace Snappy.Common.Tests.Enumerations
 {
