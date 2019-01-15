@@ -16,7 +16,7 @@ namespace Snappy.Common.Models.Shared
             TimeOutInSeconds = timeoutInSeconds;
             
             IsReTryOnError = isReTryOnError;
-            ReTryAfterInSeconds = retryAfterInSeconds;
+            ReTryAfterInSeconds = reTryAfterInSeconds;
             ReTryCount = reTryCount;
             
             IsCancelOnError = !IsReTryOnError;
