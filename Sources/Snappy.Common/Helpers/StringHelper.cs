@@ -22,14 +22,19 @@ namespace Snappy.Common.Helpers
         /// <returns></returns>
         public static bool IsValidPassword(this string text)
         {
-            var hasNumber = new Regex(@"[0-9]+");
-            var hasLowerChar = new Regex(@"[a-z]+");
-            var hasUpperChar = new Regex(@"[A-Z]+");
+            if (string.IsNullOrWhiteSpace(text)
+                || text.Length < 8)
+            {
+                return false;
+            }
+
+            var hasNumber = new Regex(@"[0-9]+", RegexOptions.Compiled);
+            var hasLowerChar = new Regex(@"[a-z]+", RegexOptions.Compiled);
+            var hasUpperChar = new Regex(@"[A-Z]+", RegexOptions.Compiled);
 
             var isValidated = hasNumber.IsMatch(text)
                               && hasUpperChar.IsMatch(text)
-                              && hasLowerChar.IsMatch(text)
-                              && text.Length > 7;
+                              && hasLowerChar.IsMatch(text);
             return isValidated;
         }
 
