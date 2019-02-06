@@ -81,7 +81,7 @@ namespace Snappy.Common.Helpers
 
             var method = new StackTrace().GetFrame(1).GetMethod();
 
-            throw new ArgumentException($"the uid is not valid > {text} [{method.DeclaringType}.{method.Name}]");
+            throw new ArgumentException($"the Uid is not valid > {text} [{method.DeclaringType}.{method.Name}]");
         }
 
         public static string GetNewUid()
