@@ -1,6 +1,6 @@
-﻿namespace Snappy.Common.Helpers
+﻿namespace Snappy.Common.Tests.Helpers
 {
-    public static class TestDataHelper
+    public class BaseTestDataHelper
     {
         public const string EMPTY_STRING = "";
         public const string STRING = "string";
@@ -56,6 +56,11 @@
         public const bool BOOL_TRUE = true;
         public const bool BOOL_FALSE = false;
 
-        public const string URL = "https://www.google.com.tr/";
+        public const string URL_HTTP = "http://turkiye.gov.tr";
+        public const string URL_HTTP_WWW = "http://www.turkiye.gov.tr";
+        public const string URL_HTTP_SHORT = "http://aka.ms";
+        public const string URL_HTTPS = "https://turkiye.gov.tr";
+        public const string URL_HTTPS_WWW = "https://www.turkiye.gov.tr";
+        public const string URL_HTTPS_SHORT = "https://aka.ms";
     }
 }
