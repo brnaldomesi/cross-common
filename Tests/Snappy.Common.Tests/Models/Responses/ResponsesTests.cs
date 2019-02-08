@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Snappy.Common.Models.Responses;
 
-namespace Snappy.Common.Tests.Models.Response
+namespace Snappy.Common.Tests.Models.Responses
 {
     [TestFixture]
     public class ResponsesTests

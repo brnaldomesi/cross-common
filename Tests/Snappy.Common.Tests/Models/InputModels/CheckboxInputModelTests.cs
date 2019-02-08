@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
-
 using Snappy.Common.Client.Models.InputModels;
-using Snappy.Common.Helpers;
 
-namespace Snappy.Common.Client.Tests.Models.InputModels
+namespace Snappy.Common.Tests.Models.InputModels
 {
     [TestFixture]
     public class CheckboxInputModelTests
