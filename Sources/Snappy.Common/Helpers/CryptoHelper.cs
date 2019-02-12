@@ -65,6 +65,14 @@ namespace Snappy.Common.Helpers
             return hashed;
         }
 
+        public string Encrypt(string text, string keyString, string ivString)
+        {
+            var key = ConvertToByteArray(keyString);
+            var iv = ConvertToByteArray(ivString);
+
+            return Encrypt(text, key, iv);
+        }
+
         public string Encrypt(string text, byte[] key, byte[] iv)
         {
             ValidateParameters(text, key, iv);
@@ -134,6 +142,14 @@ namespace Snappy.Common.Helpers
             }
 
             return Encoding.UTF8.GetString(result, 0, decryptedByteCount);
+        }
+
+        public string Decrypt(string text, string keyString, string ivString)
+        {
+            var key = ConvertToByteArray(keyString);
+            var iv = ConvertToByteArray(ivString);
+
+            return Decrypt(text, key, iv);
         }
 
         private static void ValidateParameters(string text, byte[] key, byte[] iv)
