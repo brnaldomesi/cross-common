@@ -4,8 +4,8 @@ namespace Snappy.Common.Models.Requests
 {
     public abstract class BaseAuthenticatedRequest : BaseRequest
     {
-        public long OrganizationId { get; set; }
-        public string OrganizationUid { get; set; }
+        public long CurrentOrganizationId { get; set; }
+        public string CurrentOrganizationUid { get; set; }
         public long CurrentUserId { get; set; }
 
         protected BaseAuthenticatedRequest(long currentUserId)

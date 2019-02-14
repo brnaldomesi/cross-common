@@ -66,5 +66,8 @@
         public const string URL_HTTPS = "https://turkiye.gov.tr";
         public const string URL_HTTPS_WWW = "https://www.turkiye.gov.tr";
         public const string URL_HTTPS_SHORT = "https://aka.ms";
+
+        public const string ISO_CODE_2 = "TR";
+        public const string ISO_CODE_3 = "TUR";
     }
 }
