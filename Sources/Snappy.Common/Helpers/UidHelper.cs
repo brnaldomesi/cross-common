@@ -18,12 +18,19 @@ namespace Snappy.Common.Helpers
             CacheCategoryName = nameof(UidHelper);
         }
 
-        public long GetIdFromUid(string obfuscationKey, string obfuscationIV, string recordUid, params long[] parentIds)
+        public long GetIdFromUid(string obfuscationKey, string obfuscationIV, string recordUid)
         {
             var decrypt = _cryptoHelper.Decrypt(recordUid, obfuscationKey, obfuscationIV);
-            var idString = decrypt.Split(ID_SEPERATOR, StringSplitOptions.RemoveEmptyEntries)[1];
+            var idString = decrypt.Split(ID_SEPERATOR, StringSplitOptions.RemoveEmptyEntries).ToList().Last();
             var id = Convert.ToInt64(idString);
             return id;
+        }
+
+        public string GetUidFromId(string obfuscationKey, string obfuscationIV, long recordId)
+        {
+            var preparedId = PrepareId(recordId, null);
+            var encrypt = _cryptoHelper.Encrypt(preparedId, obfuscationKey, obfuscationIV);
+            return encrypt;
         }
 
         public string GetUidFromId(string obfuscationKey, string obfuscationIV, long recordId, params long[] parentIds)
@@ -35,6 +42,11 @@ namespace Snappy.Common.Helpers
 
         public string PrepareId(long recordId, long[] parentIds)
         {
+            if (parentIds == null)
+            {
+                return recordId.ToString();
+            }
+
             var prefix = string.Join(PARENT_ID_SEPERATOR, parentIds.Select(x => x.ToString()).ToArray());
             var id = prefix + ID_SEPERATOR + recordId;
             return id;

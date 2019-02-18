@@ -23,7 +23,7 @@ namespace Snappy.Common.Tests.Helpers
             var uid = uidHelper.GetUidFromId(obfuscationKey, obfuscationIV, recordId, parent1, parent2, parent3);
             Assert.IsNotEmpty(uid);
 
-            var id = uidHelper.GetIdFromUid(obfuscationKey, obfuscationIV, uid, parent1, parent2, parent3);
+            var id = uidHelper.GetIdFromUid(obfuscationKey, obfuscationIV, uid);
             Assert.AreEqual(recordId, id);
         }
     }
