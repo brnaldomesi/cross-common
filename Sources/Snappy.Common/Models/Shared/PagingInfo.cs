@@ -14,8 +14,6 @@
         public int CurrentPage { get; set; }
         public int PageCount { get; set; }
 
-
-
         public bool IsHavingPrevious { get; set; }
         public bool IsHavingNext { get; set; }
     }
