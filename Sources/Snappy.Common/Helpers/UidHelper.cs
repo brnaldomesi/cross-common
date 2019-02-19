@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Snappy.Common.Helpers
@@ -24,6 +25,18 @@ namespace Snappy.Common.Helpers
             var idString = decrypt.Split(ID_SEPERATOR, StringSplitOptions.RemoveEmptyEntries).ToList().Last();
             var id = Convert.ToInt64(idString);
             return id;
+        }
+
+        public List<long> GetIdsFromUid(string obfuscationKey, string obfuscationIV, string recordUid)
+        {
+            var decrypt = _cryptoHelper.Decrypt(recordUid, obfuscationKey, obfuscationIV);
+            var ids = decrypt.Split(ID_SEPERATOR, StringSplitOptions.RemoveEmptyEntries);
+            var result = new List<long>();
+            foreach (var id in ids)
+            {
+                result.Add(Convert.ToInt64(id));
+            }
+            return result;
         }
 
         public string GetUidFromId(string obfuscationKey, string obfuscationIV, long recordId)
