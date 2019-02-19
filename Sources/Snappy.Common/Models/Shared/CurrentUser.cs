@@ -6,6 +6,7 @@ namespace Snappy.Common.Models.Shared
     {
         public int Id { get; set; }
         public string Uid { get; set; }
+        public string ObfuscationSalt { get; set; }
 
         public int OrganizationId
         {
