@@ -8,7 +8,7 @@ namespace Snappy.Common.Models.Shared
         public string Uid { get; set; }
         public string ObfuscationSalt { get; set; }
 
-        public int OrganizationId
+        public long OrganizationId
         {
             get { return Organization.OrganizationId; }
         }

@@ -2,7 +2,7 @@
 {
     public class CurrentOrganization
     {
-        public int OrganizationId { get; set; }
+        public long OrganizationId { get; set; }
         public string OrganizationUid { get; set; }
         public string OrganizationName { get; set; }
 
