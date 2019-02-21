@@ -59,11 +59,11 @@ namespace Snappy.Common.Tests.Enumerations
         }
 
         [Test]
-        public void ResponseStatus_Has_4_Items()
+        public void ResponseStatus_Has_5_Items()
         {
             var items = Enumeration.GetAll<ResponseStatus>();
 
-            Assert.AreEqual(4, items.Count);
+            Assert.AreEqual(5, items.Count);
             Assert.True(items.Contains(ResponseStatus.Unknown));
             Assert.True(items.Contains(ResponseStatus.Success));
             Assert.True(items.Contains(ResponseStatus.Failed));
