@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Snappy.Common.Models.Shared
 {
@@ -12,7 +13,7 @@ namespace Snappy.Common.Models.Shared
         {
             get { return Organization.OrganizationId; }
         }
-        public string OrganizationUid
+        public Guid OrganizationUid
         {
             get { return Organization.OrganizationUid; }
         }

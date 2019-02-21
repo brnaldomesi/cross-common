@@ -1,4 +1,6 @@
-﻿namespace Snappy.Common.Tests.Helpers
+﻿using System;
+
+namespace Snappy.Common.Tests.Helpers
 {
     public class BaseTestDataHelper
     {
@@ -43,8 +45,8 @@
 
         public const string PASSWORD_INVALID = "invalid-password";
 
-        public const string UID = "088d0943-f24a-42d3-8aa0-3ec115c266c6";
-        public const string UID_1 = "b64c5b8a-3498-4a7d-a9c8-74e86075853c";
+        public const string UID = "ee4c5b8a-3498-4a7d-a9c8-74e86075853c";
+        public const string UID_1 ="b64c5b8a-3498-4a7d-a9c8-74e86075853c";
         public const string UID_2 = "1f6f9edc-4da4-444f-82dd-e089c9ebd68d";
 
         public const string EMAIL = "test@test.com";

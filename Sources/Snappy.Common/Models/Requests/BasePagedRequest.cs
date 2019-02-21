@@ -7,7 +7,7 @@ namespace Snappy.Common.Models.Requests
         public int Skip { get; set; }
         public int Take { get; set; }
 
-        public string LastUid { get; set; }
+        public Guid LastUid { get; set; }
         public bool IsAscending { get; set; }
     }
 }
