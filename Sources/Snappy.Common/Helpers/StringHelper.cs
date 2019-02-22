@@ -61,35 +61,6 @@ namespace Snappy.Common.Helpers
             return !IsEmail(text);
         }
 
-        public static bool IsUid(this string text)
-        {
-            var isValid = Guid.TryParse(text, out Guid uid);
-            return isValid;
-        }
-
-        public static bool IsNotUid(this string text)
-        {
-            return !IsUid(text);
-        }
-
-        public static void ValidateUid(this string text)
-        {
-            if (IsUid(text))
-            {
-                return;
-            }
-
-            var method = new StackTrace().GetFrame(1).GetMethod();
-
-            throw new ArgumentException($"the Uid is not valid > {text} [{method.DeclaringType}.{method.Name}]");
-        }
-
-        public static string GetNewUid()
-        {
-            var uid = Guid.NewGuid().ToString("N").ToUpper();
-            return uid;
-        }
-
         public static bool IsEmpty(this string text)
         {
             return string.IsNullOrWhiteSpace(text);

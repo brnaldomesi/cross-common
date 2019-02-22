@@ -73,13 +73,12 @@ namespace Snappy.Common.Tests.Helpers
         public const string ISO_CODE_2 = "TR";
         public const string ISO_CODE_3 = "TUR";
 
-        public static Guid GetGuid()
-        {
-            return new Guid(UID);
-        }
-
         public static Guid GetStringAsGuid(string uid)
         {
+            if (uid.IsNotUid())
+            {
+                //return null;
+            }
             return new Guid(uid);
         }
 
