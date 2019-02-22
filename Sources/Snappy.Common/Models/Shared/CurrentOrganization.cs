@@ -4,9 +4,9 @@ namespace Snappy.Common.Models.Shared
 {
     public class CurrentOrganization
     {
-        public long OrganizationId { get; set; }
-        public Guid OrganizationUid { get; set; }
-        public string OrganizationName { get; set; }
+        public long Id { get; set; }
+        public Guid Uid { get; set; }
+        public string Name { get; set; }
 
         public string ObfuscationKey { get; set; }
         public string ObfuscationIV { get; set; }
