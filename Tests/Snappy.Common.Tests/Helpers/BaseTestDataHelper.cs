@@ -1,4 +1,5 @@
 ﻿using System;
+using Snappy.Common.Helpers;
 
 namespace Snappy.Common.Tests.Helpers
 {
@@ -46,7 +47,7 @@ namespace Snappy.Common.Tests.Helpers
         public const string PASSWORD_INVALID = "invalid-password";
 
         public const string UID = "ee4c5b8a-3498-4a7d-a9c8-74e86075853c";
-        public const string UID_1 ="b64c5b8a-3498-4a7d-a9c8-74e86075853c";
+        public const string UID_1 = "b64c5b8a-3498-4a7d-a9c8-74e86075853c";
         public const string UID_2 = "1f6f9edc-4da4-444f-82dd-e089c9ebd68d";
 
         public const string EMAIL = "test@test.com";
@@ -71,5 +72,15 @@ namespace Snappy.Common.Tests.Helpers
 
         public const string ISO_CODE_2 = "TR";
         public const string ISO_CODE_3 = "TUR";
+
+        public static Guid GetStringAsGuid(string uid)
+        {
+            return new Guid(uid);
+        }
+
+        public static string GetUidAsString(Guid uid)
+        {
+            return uid.ToString("N").ToLowerInvariant();
+        }
     }
 }
