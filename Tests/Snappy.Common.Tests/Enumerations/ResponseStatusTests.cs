@@ -43,21 +43,32 @@ namespace Snappy.Common.Tests.Enumerations
         {
             var item = ResponseStatus.Invalid;
 
-            Assert.AreEqual(2, item.Value);
+            Assert.AreEqual(3, item.Value);
             Assert.AreEqual("Invalid", item.DisplayName);
             Assert.AreEqual(string.Empty, item.Description);
         }
 
         [Test]
-        public void ResponseStatus_Has_4_Items()
+        public void ResponseStatus_SuccessWithProblems()
+        {
+            var item = ResponseStatus.SuccessWithProblems;
+
+            Assert.AreEqual(4, item.Value);
+            Assert.AreEqual("SuccessWithProblems", item.DisplayName);
+            Assert.AreEqual(string.Empty, item.Description);
+        }
+
+        [Test]
+        public void ResponseStatus_Has_5_Items()
         {
             var items = Enumeration.GetAll<ResponseStatus>();
 
-            Assert.AreEqual(4, items.Count);
+            Assert.AreEqual(5, items.Count);
             Assert.True(items.Contains(ResponseStatus.Unknown));
             Assert.True(items.Contains(ResponseStatus.Success));
             Assert.True(items.Contains(ResponseStatus.Failed));
             Assert.True(items.Contains(ResponseStatus.Invalid));
+            Assert.True(items.Contains(ResponseStatus.SuccessWithProblems));
         }
     }
 }
