@@ -94,7 +94,7 @@ namespace Snappy.Common.Tests.Helpers
 
         public static string GetUidAsString(Guid uid)
         {
-            return uid.ToString("N").ToLowerInvariant();
+            return uid.ToString("D").ToLowerInvariant();
         }
     }
 }
