@@ -64,5 +64,13 @@ namespace Snappy.Common.Tests.Helpers
             var propFirstName = properties.First(x => x.Name == propertyName);
             propFirstName.PropertyType.Name.ShouldBe(nameof(Guid));
         }
+
+        public void AssertNullableGuidProperty(PropertyInfo[] properties, string propertyName, Guid? propertyValue)
+        {
+            propertyValue.ToString().ShouldBe("");
+
+            var propFirstName = properties.First(x => x.Name == propertyName);
+            propFirstName.PropertyType.Name.ShouldBe("Nullable`1");
+        }
     }
 }
