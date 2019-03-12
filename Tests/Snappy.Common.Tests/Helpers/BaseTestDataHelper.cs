@@ -5,6 +5,7 @@ namespace Snappy.Common.Tests.Helpers
 {
     public class BaseTestDataHelper
     {
+        public static string BASE_64_STRING = "bXk=";
         public const string EMPTY_STRING = "";
         public const string STRING = "string";
         public const string STRING_1 = "string_1";
