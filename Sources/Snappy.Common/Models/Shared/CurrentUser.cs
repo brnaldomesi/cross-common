@@ -1,19 +1,14 @@
 ﻿using System;
+
 using System.Collections.Generic;
 
 namespace Snappy.Common.Models.Shared
 {
     public class CurrentUser
     {
-        public long OrganizationId
-        {
-            get { return Organization.Id; }
-        }
-        public Guid OrganizationUid
-        {
-            get { return Organization.Uid; }
-        }
         public CurrentOrganization Organization { get; set; }
+        public long OrganizationId => Organization.Id;
+        public Guid OrganizationUid => Organization.Uid;
 
         public int Id { get; set; }
         public string Uid { get; set; }
