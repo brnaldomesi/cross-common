@@ -59,7 +59,7 @@ namespace Snappy.Common.Helpers
             return Convert.FromBase64CharArray(text.ToCharArray(), 0, text.Length);
         }
 
-        public string Hash(string text, string salt)
+        public virtual string Hash(string text, string salt)
         {
             var hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(text, ConvertToByteArray(salt), KeyDerivationPrf.HMACSHA512, 28657, 256 / 8));
             return hashed;
