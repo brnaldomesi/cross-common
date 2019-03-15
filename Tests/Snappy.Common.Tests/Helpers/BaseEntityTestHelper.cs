@@ -57,6 +57,14 @@ namespace Snappy.Common.Tests.Helpers
             propFirstName.PropertyType.Name.ShouldBe(nameof(Int64));
         }
 
+        public void AssertDoubleProperty(PropertyInfo[] properties, string propertyName, double propertyValue)
+        {
+            propertyValue.ShouldBe(0);
+
+            var propFirstName = properties.First(x => x.Name == propertyName);
+            propFirstName.PropertyType.Name.ShouldBe(nameof(Double));
+        }
+
         public void AssertGuidProperty(PropertyInfo[] properties, string propertyName, Guid propertyValue)
         {
             propertyValue.ToString().ShouldBe("00000000-0000-0000-0000-000000000000");
