@@ -21,14 +21,14 @@ namespace Snappy.Common.Tests.Helpers
         public const string STRING_10 = "string_10";
 
         public const int POSITIVE_INT_NUMBER = 1;
-        public const int POSITIVE_NUMBER_DIFFERENT = 2;
-        public const int POSITIVE_NUMBER_OTHER = 3;
+        public const int POSITIVE_INT_NUMBER_DIFFERENT = 2;
+        public const int POSITIVE_INT_NUMBER_OTHER = 3;
 
         public const int ZERO_NUMBER = 0;
 
         public const int NEGATIVE_INT_NUMBER = -1;
-        public const int NEGATIVE_NUMBER_DIFFERENT = -2;
-        public const int NEGATIVE_NUMBER_OTHER = -3;
+        public const int NEGATIVE_INT_NUMBER_DIFFERENT = -2;
+        public const int NEGATIVE_INT_NUMBER_OTHER = -3;
 
         public const double NEGATIVE_DOUBLE_NUMBER = -1.04;
         public const double NEGATIVE_DOUBLE_NUMBER_DIFFERENT = -2.04;
