@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
+using Moq;
 using Snappy.Common.Helpers;
 
 namespace Snappy.Common.Tests.Helpers
@@ -97,6 +99,14 @@ namespace Snappy.Common.Tests.Helpers
         public static string GetUidAsString(Guid uid)
         {
             return uid.ToString("D").ToLowerInvariant();
+        }
+
+        public static IFormFile GetMockFile()
+        {
+            var mockFile = new Mock<IFormFile>();
+            mockFile.Setup(x => x.Length).Returns(100);
+
+            return mockFile.Object;
         }
     }
 }
