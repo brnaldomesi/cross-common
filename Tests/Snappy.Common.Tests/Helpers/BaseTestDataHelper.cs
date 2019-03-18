@@ -20,13 +20,13 @@ namespace Snappy.Common.Tests.Helpers
         public const string STRING_9 = "string_9";
         public const string STRING_10 = "string_10";
 
-        public const int POSITIVE_NUMBER = 1;
+        public const int POSITIVE_INT_NUMBER = 1;
         public const int POSITIVE_NUMBER_DIFFERENT = 2;
         public const int POSITIVE_NUMBER_OTHER = 3;
 
         public const int ZERO_NUMBER = 0;
 
-        public const int NEGATIVE_NUMBER = -1;
+        public const int NEGATIVE_INT_NUMBER = -1;
         public const int NEGATIVE_NUMBER_DIFFERENT = -2;
         public const int NEGATIVE_NUMBER_OTHER = -3;
 
