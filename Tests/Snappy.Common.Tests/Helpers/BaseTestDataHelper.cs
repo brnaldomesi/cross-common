@@ -74,6 +74,8 @@ namespace Snappy.Common.Tests.Helpers
         public const string URL_HTTPS_WWW = "https://www.turkiye.gov.tr";
         public const string URL_HTTPS_SHORT = "https://aka.ms";
 
+        public const string IP = "87.204.85.116";
+
         public const string ISO_CODE_2 = "TR";
         public const string ISO_CODE_3 = "TUR";
 
@@ -82,6 +84,31 @@ namespace Snappy.Common.Tests.Helpers
             return new Guid("3A2F7BA0-0D4C-4231-B9DF-A15460B60BD2");
         }
 
+        public static Guid GetNewGuid_1()
+        {
+            return new Guid("5bb6cdd7-b5d1-4cf0-98c9-9bc68fa940c3");
+        }
+
+        public static Guid GetNewGuid_2()
+        {
+            return new Guid("5f329bf2-7d4f-490a-a014-c15570ebbe06");
+        }
+
+        public static Guid GetNewGuid_3()
+        {
+            return new Guid("6886356d-a0f6-4e0f-829c-70a61df33ca3");
+        }
+
+        public static Guid GetNewGuid_4()
+        {
+            return new Guid("92b97a02-b151-4ec0-8e4a-7a07ff318615");
+        }
+
+        public static Guid GetNewGuid_5()
+        {
+            return new Guid("706ecd9d-1547-4643-bb8f-9aa7b92e9e16");
+        }
+        
         public static Guid GetEmptyGuid()
         {
             return Guid.Empty;
