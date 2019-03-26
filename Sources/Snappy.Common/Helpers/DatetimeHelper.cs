@@ -3,7 +3,7 @@ using NodaTime.Text;
 
 namespace Snappy.Common.Helpers
 {
-    public class DatetimeHelper
+    public class DatetimeHelper : IDatetimeHelper
     {
         private readonly IClock _clock;
 
