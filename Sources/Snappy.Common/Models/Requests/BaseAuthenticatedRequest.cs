@@ -6,10 +6,11 @@
 
         protected BaseAuthenticatedRequest(long currentUserId)
         {
-            if (currentUserId < 1)
-            {
-                ThrowArgumentException(nameof(currentUserId), currentUserId);
-            }
+            //todo: giriş yapıldığında currentUserId 0 geliyor
+           if (currentUserId < 1)
+           {
+               ThrowArgumentException(nameof(currentUserId), currentUserId);
+           }
 
             CurrentUserId = currentUserId;
         }

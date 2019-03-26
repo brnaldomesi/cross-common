@@ -24,13 +24,14 @@ namespace Snappy.Common.Models.Responses
         }
     }
 
-    public abstract class BaseResponse<T> : BaseResponse where T : BaseDto
+    public abstract class BaseResponse<T> : BaseResponse where T : BaseDto, new()
     {
         public T Item { get; set; }
         public List<T> Items { get; set; }
 
         protected BaseResponse()
         {
+            Item = new T();
             Items = new List<T>();
         }
     }
