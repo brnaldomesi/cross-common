@@ -10,8 +10,8 @@ namespace Snappy.Common.Models.Shared
         public long OrganizationId => Organization.Id;
         public Guid OrganizationUid => Organization.Uid;
 
-        public int Id { get; set; }
-        public string Uid { get; set; }
+        public long Id { get; set; }
+        public Guid Uid { get; set; }
         public string ObfuscationSalt { get; set; }
 
         public List<RoleInfo> Roles { get; set; }
