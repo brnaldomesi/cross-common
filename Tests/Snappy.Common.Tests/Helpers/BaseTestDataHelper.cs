@@ -79,6 +79,14 @@ namespace Snappy.Common.Tests.Helpers
         public const long LONG = 2147483649L;
         public const long LONG_1 = 7447454649L;
         public const long LONG_2 = 9647483649L;
+        public const long LONG_3 = 9645483649L;
+        public const long LONG_4 = 8647483649L;
+        public const long LONG_5 = 7647483649L;
+        public const long LONG_6 = 6647483649L;
+        public const long LONG_7 = 1647483649L;
+        public const long LONG_8 = 2647483649L;
+        public const long LONG_9 = 4647483649L;
+        public const long LONG_10 = 7645483649L;
 
         public const bool BOOL_TRUE = true;
         public const bool BOOL_FALSE = false;
