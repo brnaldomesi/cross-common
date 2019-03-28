@@ -1,6 +1,8 @@
 ﻿using System;
+
 using Microsoft.AspNetCore.Http;
 using Moq;
+
 using Snappy.Common.Helpers;
 
 namespace Snappy.Common.Tests.Helpers
@@ -22,15 +24,29 @@ namespace Snappy.Common.Tests.Helpers
         public const string STRING_9 = "string_9";
         public const string STRING_10 = "string_10";
 
-        public const int POSITIVE_INT_NUMBER = 1;
-        public const int POSITIVE_INT_NUMBER_DIFFERENT = 2;
-        public const int POSITIVE_INT_NUMBER_OTHER = 3;
+        public const int POSITIVE_INT_NUMBER_1 = 1;
+        public const int POSITIVE_INT_NUMBER_2 = 2;
+        public const int POSITIVE_INT_NUMBER_3 = 3;
+        public const int POSITIVE_INT_NUMBER_4 = 4;
+        public const int POSITIVE_INT_NUMBER_5 = 5;
+        public const int POSITIVE_INT_NUMBER_6 = 6;
+        public const int POSITIVE_INT_NUMBER_7 = 7;
+        public const int POSITIVE_INT_NUMBER_8 = 8;
+        public const int POSITIVE_INT_NUMBER_9 = 9;
+        public const int POSITIVE_INT_NUMBER_10 = 10;
 
         public const int ZERO_NUMBER = 0;
 
-        public const int NEGATIVE_INT_NUMBER = -1;
-        public const int NEGATIVE_INT_NUMBER_DIFFERENT = -2;
-        public const int NEGATIVE_INT_NUMBER_OTHER = -3;
+        public const int NEGATIVE_INT_NUMBER_1 = -1;
+        public const int NEGATIVE_INT_NUMBER_2 = -2;
+        public const int NEGATIVE_INT_NUMBER_3 = -3;
+        public const int NEGATIVE_INT_NUMBER_4 = -4;
+        public const int NEGATIVE_INT_NUMBER_5 = -5;
+        public const int NEGATIVE_INT_NUMBER_6 = -6;
+        public const int NEGATIVE_INT_NUMBER_7 = -7;
+        public const int NEGATIVE_INT_NUMBER_8 = -8;
+        public const int NEGATIVE_INT_NUMBER_9 = -9;
+        public const int NEGATIVE_INT_NUMBER_10 = -10;
 
         public const double NEGATIVE_DOUBLE_NUMBER = -1.04;
         public const double NEGATIVE_DOUBLE_NUMBER_DIFFERENT = -2.04;
