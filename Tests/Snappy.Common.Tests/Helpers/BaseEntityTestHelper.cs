@@ -4,6 +4,7 @@ using System.Reflection;
 
 using NodaTime;
 using Shouldly;
+using Snappy.Common.Models.DataTransferObjects;
 
 namespace Snappy.Common.Tests.Helpers
 {
@@ -79,6 +80,24 @@ namespace Snappy.Common.Tests.Helpers
 
             var propFirstName = properties.First(x => x.Name == propertyName);
             propFirstName.PropertyType.Name.ShouldBe("Nullable`1");
+        }
+
+        protected static void AssertBaseDto(Type entityType)
+        {
+            var isContinue = true;
+            var path = entityType.BaseType;
+            var tempPath = path;
+            while (isContinue)
+            {
+                if (path == typeof(object))
+                {
+                    tempPath.IsAssignableFrom(typeof(BaseDto)).ShouldBeTrue();
+                    isContinue = false;
+                }
+
+                tempPath = path;
+                path = path.BaseType;
+            }
         }
     }
 }
