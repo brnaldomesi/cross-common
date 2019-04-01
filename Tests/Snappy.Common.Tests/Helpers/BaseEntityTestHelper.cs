@@ -84,19 +84,19 @@ namespace Snappy.Common.Tests.Helpers
 
         protected static void AssertBaseDto(Type entityType)
         {
+            var type = entityType.BaseType;
+            var baseType = type;
             var isContinue = true;
-            var path = entityType.BaseType;
-            var tempPath = path;
             while (isContinue)
             {
-                if (path == typeof(object))
+                if (type == typeof(object))
                 {
-                    tempPath.IsAssignableFrom(typeof(BaseDto)).ShouldBeTrue();
+                    baseType.IsAssignableFrom(typeof(BaseDto)).ShouldBeTrue();
                     isContinue = false;
                 }
 
-                tempPath = path;
-                path = path.BaseType;
+                baseType = type;
+                type = type.BaseType;
             }
         }
     }
