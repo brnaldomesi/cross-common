@@ -20,6 +20,7 @@ namespace Snappy.Common.Models.Requests
 
         protected BaseAuthenticatedPagedRequest(long currentUserId) : base(currentUserId)
         {
+            Take = 100;
         }
     }
 }
