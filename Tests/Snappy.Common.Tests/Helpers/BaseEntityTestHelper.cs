@@ -76,10 +76,10 @@ namespace Snappy.Common.Tests.Helpers
 
         public void AssertNullableGuidProperty(PropertyInfo[] properties, string propertyName, Guid? propertyValue)
         {
-            propertyValue.ToString().ShouldBe("");
+            propertyValue.ToString().ShouldBe(string.Empty);
 
-            var propFirstName = properties.First(x => x.Name == propertyName);
-            propFirstName.PropertyType.Name.ShouldBe("Nullable`1");
+            var propertyInfo = properties.First(x => x.Name == propertyName);
+            propertyInfo.PropertyType.IsAssignableFrom(typeof(Guid?));
         }
 
         protected static void AssertBaseDto(Type entityType)
