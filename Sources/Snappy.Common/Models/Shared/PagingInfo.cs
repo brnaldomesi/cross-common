@@ -1,4 +1,6 @@
-﻿namespace Snappy.Common.Models.Shared
+﻿using System;
+
+namespace Snappy.Common.Models.Shared
 {
     public class PagingInfo
     {
@@ -9,12 +11,13 @@
         public int Skip { get; set; }
         public int Take { get; set; }
 
-        public string LastUid { get; set; }
+        public Guid LastUid { get; set; }
         public bool IsAscending { get; set; }
 
         public long TotalItemCount { get; set; }
 
-        public int CurrentPage {
+        public int CurrentPage
+        {
             get
             {
                 if (Skip < 1)
@@ -22,7 +25,7 @@
                     return 1;
                 }
 
-                return Skip / Take;
+                return (Skip / Take) + 1;
             }
         }
 
@@ -41,9 +44,8 @@
 
         public PagingInfo()
         {
-            LastUid = string.Empty;
             IsAscending = true;
-            Take = 100;
+            Take = 4;
         }
     }
 }

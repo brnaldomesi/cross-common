@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Snappy.Common.Models.Shared;
 
 namespace Snappy.Common.Models.Requests
 {
@@ -6,21 +6,14 @@ namespace Snappy.Common.Models.Requests
     {
         /// <summary>
         /// if skip is greater than 0
-        /// service does not checks for LastUid
-        /// </summary>
-        public int Skip { get; set; }
-
-        /// <summary>
+        /// service does not checks for LastUid,
         /// To use last uid ensure Skip is 0
         /// </summary>
-        public Guid LastUid { get; set; }
-
-        public int Take { get; set; }
-        public bool IsAscending { get; set; }
+        public PagingInfo PagingInfo { get; set; }
 
         protected BaseAuthenticatedPagedRequest(long currentUserId) : base(currentUserId)
         {
-            Take = 100;
+            PagingInfo = new PagingInfo();
         }
     }
 }
