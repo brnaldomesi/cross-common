@@ -2,6 +2,7 @@
 
 using Snappy.Common.Enumerations;
 using Snappy.Common.Models.DataTransferObjects;
+using Snappy.Common.Models.Shared;
 
 namespace Snappy.Common.Models.Responses
 {
@@ -29,10 +30,14 @@ namespace Snappy.Common.Models.Responses
         public T Item { get; set; }
         public List<T> Items { get; set; }
 
+        public PagingInfo PagingInfo { get; set; }
+
         protected BaseResponse()
         {
             Item = new T();
             Items = new List<T>();
+
+            PagingInfo = new PagingInfo();
         }
     }
 }
