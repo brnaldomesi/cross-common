@@ -38,7 +38,7 @@ namespace Snappy.Common.Models.Shared
         {
             get
             {
-                return TotalItemCount > Skip;
+                return TotalItemCount - (Skip + Take) > 0;
             }
         }
 
