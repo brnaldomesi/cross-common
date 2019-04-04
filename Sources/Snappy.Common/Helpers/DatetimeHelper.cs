@@ -8,7 +8,7 @@ namespace Snappy.Common.Helpers
         private readonly IClock _clock;
 
         public const string DATE_FORMAT_PATTERN = "yyyy-MM-dd";
-        public const string TIME_FORMAT_PATTERN = "yyyy-MM-dd-HH-mm";
+        public const string TIME_FORMAT_PATTERN = "yyyy-MM-dd-HH-mm-ss";
 
         public DatetimeHelper(IClock clock = null)
         {
