@@ -103,6 +103,28 @@ namespace Snappy.Common.Tests.Helpers
         public const string ISO_CODE_2 = "TR";
         public const string ISO_CODE_3 = "TUR";
 
+        public const string CASE_1 = "case_1";
+        public const string CASE_2 = "case_2";
+        public const string CASE_3 = "case_3";
+        public const string CASE_4 = "case_4";
+        public const string CASE_5 = "case_5";
+        public const string CASE_6 = "case_6";
+        public const string CASE_7 = "case_7";
+        public const string CASE_8 = "case_8";
+        public const string CASE_9 = "case_9";
+        public const string CASE_10 = "case_10";
+        public const string CASE_11 = "case_11";
+        public const string CASE_12 = "case_12";
+        public const string CASE_13 = "case_13";
+        public const string CASE_14 = "case_14";
+        public const string CASE_15 = "case_15";
+        public const string CASE_16 = "case_16";
+        public const string CASE_17 = "case_17";
+        public const string CASE_18 = "case_18";
+        public const string CASE_19 = "case_19";
+        public const string CASE_20 = "case_20";
+
+
         public static Guid GetNewGuid()
         {
             return new Guid("3A2F7BA0-0D4C-4231-B9DF-A15460B60BD2");
