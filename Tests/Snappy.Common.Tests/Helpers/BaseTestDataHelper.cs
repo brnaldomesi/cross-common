@@ -124,6 +124,15 @@ namespace Snappy.Common.Tests.Helpers
         public const string CASE_19 = "case_19";
         public const string CASE_20 = "case_20";
 
+        public static Guid GetParkNetOrganizationUid()
+        {
+            return new Guid("a497048f-34a6-4730-8199-ac81617c3929");
+        }
+
+        public static Guid GetBlueSoftOrganizationUid()
+        {
+            return new Guid("87167bfe-c2b3-4e6b-9126-341ff4bb4f66");
+        }
 
         public static Guid GetNewGuid()
         {
