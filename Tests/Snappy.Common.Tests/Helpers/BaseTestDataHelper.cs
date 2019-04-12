@@ -163,7 +163,7 @@ namespace Snappy.Common.Tests.Helpers
         {
             return new Guid("706ecd9d-1547-4643-bb8f-9aa7b92e9e16");
         }
-        
+
         public static Guid GetEmptyGuid()
         {
             return Guid.Empty;
