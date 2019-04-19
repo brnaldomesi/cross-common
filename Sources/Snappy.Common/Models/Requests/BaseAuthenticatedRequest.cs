@@ -1,6 +1,6 @@
 ﻿namespace Snappy.Common.Models.Requests
 {
-    public abstract class BaseAuthenticatedRequest : BaseRequest
+    public abstract class BaseAuthenticatedRequest : BasePagedRequest
     {
         public long CurrentUserId { get; set; }
 
