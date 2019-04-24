@@ -1,6 +1,6 @@
 ﻿using System;
-
 using Microsoft.AspNetCore.Http;
+
 using Moq;
 
 using Snappy.Common.Helpers;
