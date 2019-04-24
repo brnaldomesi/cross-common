@@ -129,6 +129,11 @@ namespace Snappy.Common.Tests.Helpers
             return new Guid("a497048f-34a6-4730-8199-ac81617c3929");
         }
 
+        public static long GetParkNetOrganizationId()
+        {
+            return 7647483649L;
+        }
+
         public static Guid GetBlueSoftOrganizationUid()
         {
             return new Guid("87167bfe-c2b3-4e6b-9126-341ff4bb4f66");
