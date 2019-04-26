@@ -34,6 +34,8 @@ namespace Snappy.Common.Tests.Helpers
         public const int POSITIVE_INT_NUMBER_8 = 8;
         public const int POSITIVE_INT_NUMBER_9 = 9;
         public const int POSITIVE_INT_NUMBER_10 = 10;
+        public const int POSITIVE_INT_NUMBER_100 = 100;
+        public const int POSITIVE_INT_NUMBER_101 = 101;
 
         public const int ZERO_NUMBER = 0;
 
