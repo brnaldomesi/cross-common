@@ -8,8 +8,34 @@ namespace Snappy.Common.Models.Shared
         public const string PAGE_NUMBERS = "page_numbers";
         public string Type { get; set; }
 
-        public int Skip { get; set; }
-        public int Take { get; set; }
+        private int _skip;
+        public int Skip
+        {
+            get { return _skip; }
+            set
+            {
+                if (value < 0)
+                {
+                    value = 0;
+                }
+                _skip = value;
+            }
+        }
+
+        private int _take;
+        public int Take
+        {
+            get { return _take; }
+            set
+            {
+                if (value > 100 || value <= 0)
+                {
+                    value = 100;
+                }
+
+                _take = value;
+            }
+        }
 
         public Guid LastUid { get; set; }
         public bool IsAscending { get; set; }
@@ -45,7 +71,7 @@ namespace Snappy.Common.Models.Shared
         public PagingInfo()
         {
             IsAscending = true;
-            Take = 100;
+            Take = 4;
         }
     }
 }
