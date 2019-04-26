@@ -94,6 +94,20 @@ namespace Snappy.Common.Tests.Models.Shared
             result.ShouldBe(expected);
         }
 
+        [TestCase(5, true)]
+        [TestCase(-5, false)]
+        public void PagingInfo_IsHavingPrevious(int skip, bool expected)
+        {
+            // arrange
+            var pagingInfo = GetPagingInfo(skip, 0, 0);
+
+            // act
+            var result = pagingInfo.IsHavingPrevious;
+
+            // assert
+            result.ShouldBe(expected);
+        }
+
         private PagingInfo GetPagingInfo(int skip, int take, int totalItemCount, Guid lastUid = default(Guid))
         {
             if (lastUid == default(Guid))
