@@ -78,6 +78,11 @@ namespace Snappy.Common.Tests.Helpers
 
         public const string EMAIL_INVALID = "invalid-email";
 
+        public static string GetNewEmail()
+        {
+            return Guid.NewGuid().ToString("N") + "@email.com";
+        }
+
         public const long LONG = 2147483649L;
         public const long LONG_1 = 7447454649L;
         public const long LONG_2 = 9647483649L;
