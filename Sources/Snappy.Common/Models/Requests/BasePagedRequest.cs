@@ -4,6 +4,8 @@ namespace Snappy.Common.Models.Requests
 {
     public abstract class BasePagedRequest : BaseRequest
     {
+        public string SearchTerm { get; set; }
+
         /// <summary>
         /// if skip is greater than 0
         /// service does not checks for LastUid,
