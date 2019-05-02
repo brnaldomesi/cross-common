@@ -71,7 +71,7 @@ namespace Snappy.Common.Models.Shared
         public PagingInfo()
         {
             IsAscending = true;
-            Take = 4;
+            Take = 100;
         }
     }
 }
