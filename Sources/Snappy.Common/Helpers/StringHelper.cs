@@ -64,7 +64,7 @@ namespace Snappy.Common.Helpers
         {
             return string.IsNullOrWhiteSpace(text);
         }
-
+        
         public static bool IsNotEmpty(this string text)
         {
             return !IsEmpty(text);
@@ -81,6 +81,11 @@ namespace Snappy.Common.Helpers
         public static bool IsNotUrl(this string text)
         {
             return !IsUrl(text);
+        }
+
+        public static string TrimOrDefault(this string text)
+        {
+            return text == null ? string.Empty : text.Trim();
         }
     }
 }
