@@ -31,7 +31,7 @@ namespace Snappy.Common.Helpers
 
         public static string GetNewUid()
         {
-            var uid = Guid.NewGuid().ToString("N").ToUpper();
+            var uid = Guid.NewGuid().ToUidString().ToUpper();
             return uid;
         }
 

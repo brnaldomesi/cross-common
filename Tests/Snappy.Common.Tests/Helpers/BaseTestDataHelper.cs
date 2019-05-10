@@ -80,7 +80,7 @@ namespace Snappy.Common.Tests.Helpers
 
         public static string GetNewEmail()
         {
-            return Guid.NewGuid().ToString("N") + "@email.com";
+            return Guid.NewGuid().ToUidString() + "@email.com";
         }
 
         public const long LONG = 2147483649L;
