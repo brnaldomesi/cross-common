@@ -8,7 +8,7 @@ namespace Snappy.Common.Helpers
         public static bool IsUid(this string text)
         {
             var isValid = Guid.TryParse(text, out var uid);
-            return isValid 
+            return isValid
                    && IsNotEmptyGuid(uid);
         }
 
@@ -43,6 +43,11 @@ namespace Snappy.Common.Helpers
         public static bool IsNotEmptyGuid(this Guid guid)
         {
             return !IsEmptyGuid(guid);
+        }
+
+        public static string ToUidString(this Guid guid)
+        {
+            return guid.ToString("N");
         }
     }
 }

@@ -34,9 +34,19 @@ namespace Snappy.Common.Helpers
             return GetRandomData(128);
         }
 
+        public string GetSaltAsString()
+        {
+            return Convert.ToBase64String(GetSalt());
+        }
+
         public byte[] GetKey()
         {
             return GetRandomData(256);
+        }
+
+        public string GetKeyAsString()
+        {
+            return Convert.ToBase64String(GetKey());
         }
 
         public byte[] GetIV()
@@ -44,9 +54,9 @@ namespace Snappy.Common.Helpers
             return GetRandomData(128);
         }
 
-        public string GetSaltAsString()
+        public string GetIVAsString()
         {
-            return Convert.ToBase64String(GetSalt());
+            return Convert.ToBase64String(GetIV());
         }
 
         public string ConvertToString(byte[] text)
