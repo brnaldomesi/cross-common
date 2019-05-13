@@ -16,6 +16,8 @@ namespace Snappy.Common.Models.Shared
         public string Email { get; set; }
         public string ObfuscationSalt { get; set; }
 
+        public bool IsActionSucceed { get; set; }
+
         public List<RoleInfo> Roles { get; set; }
 
         public CurrentUser()
