@@ -13,7 +13,7 @@ namespace Snappy.Common.Models.Responses
         public List<string> SuccessMessages { get; set; }
         public List<string> WarningMessages { get; set; }
         public List<string> InfoMessages { get; set; }
-        
+
         protected BaseResponse()
         {
             Status = ResponseStatus.Unknown;
@@ -22,6 +22,24 @@ namespace Snappy.Common.Models.Responses
             SuccessMessages = new List<string>();
             WarningMessages = new List<string>();
             InfoMessages = new List<string>();
+        }
+            
+        public void SetInvalid()
+        {
+            Status = ResponseStatus.Invalid;
+            ErrorMessages.Add(ResponseStatus.Invalid.Description);
+        }
+
+        public void SetInvalidBecauseEntityNotFound()
+        {
+            Status = ResponseStatus.InvalidBecauseEntityNotFound;
+            ErrorMessages.Add(ResponseStatus.InvalidBecauseEntityNotFound.Description);
+        }
+
+        public void SetFailed()
+        {
+            Status = ResponseStatus.Failed;
+            ErrorMessages.Add(ResponseStatus.Failed.Description);
         }
     }
 
