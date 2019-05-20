@@ -36,6 +36,12 @@ namespace Snappy.Common.Models.Responses
             ErrorMessages.Add(ResponseStatus.InvalidBecauseEntityNotFound.Description);
         }
 
+        public void SetInvalidForDeleteBecauseHasChildren()
+        {
+            Status = ResponseStatus.Invalid;
+            ErrorMessages.Add("can_not_delete_because_has_children_entity");
+        }
+
         public void SetFailed()
         {
             Status = ResponseStatus.Failed;
