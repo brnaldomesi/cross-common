@@ -83,6 +83,30 @@ namespace Snappy.Common.Helpers
             return !IsUrl(text);
         }
 
+        /// <summary>
+        /// Checks if a string is cron expression 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static bool IsValidCronExpression(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return false;
+            }
+
+            var cronExpressionText = new Regex(@"[A-Z]*", RegexOptions.Compiled);
+
+            var isValidated = cronExpressionText.IsMatch(text);
+
+            return isValidated;
+        }
+
+        public static bool IsNotValidCronExpression(this string text)
+        {
+            return !IsValidPassword(text);
+        }
+
         public static string TrimOrDefault(this string text)
         {
             return text == null ? string.Empty : text.Trim();
