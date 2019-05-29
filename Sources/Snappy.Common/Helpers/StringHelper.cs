@@ -64,7 +64,7 @@ namespace Snappy.Common.Helpers
         {
             return string.IsNullOrWhiteSpace(text);
         }
-        
+
         public static bool IsNotEmpty(this string text)
         {
             return !IsEmpty(text);
@@ -110,6 +110,23 @@ namespace Snappy.Common.Helpers
         public static string TrimOrDefault(this string text)
         {
             return text == null ? string.Empty : text.Trim();
+        }
+
+        /// <summary>
+        /// checks if .xls, .xlsx or .csv
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static bool IsBasicDataUploadExtension(this string text)
+        {
+            return text == ".csv"
+                   || text == ".xls"
+                   || text == ".xlsx";
+        }
+
+        public static bool IsNotBasicDataUploadExtension(this string text)
+        {
+            return !IsBasicDataUploadExtension(text);
         }
     }
 }
