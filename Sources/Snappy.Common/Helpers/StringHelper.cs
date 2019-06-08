@@ -112,6 +112,11 @@ namespace Snappy.Common.Helpers
             return text == null ? string.Empty : text.Trim();
         }
 
+        public static string CleanWhitespaces(this string text)
+        {
+            return Regex.Replace(text, @"\s+", "");
+        }
+
         /// <summary>
         /// checks if .xls, .xlsx or .csv
         /// </summary>
