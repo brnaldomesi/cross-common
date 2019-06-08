@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Snappy.Common.Helpers;
 
 namespace Snappy.Common.Enumerations.Base
 {
@@ -30,6 +31,14 @@ namespace Snappy.Common.Enumerations.Base
         {
             var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
             return fields.Select(f => f.GetValue(null)).Cast<T>().ToList();
+        }
+
+        public static T Get<T>(Guid uid)
+            where T : Enumeration, IEnumerationWithUid
+        {
+            var item = GetAll<T>().Find(x => x.Uid == uid);
+
+            return item;
         }
 
         public override bool Equals(object obj)
