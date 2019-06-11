@@ -95,16 +95,18 @@ namespace Snappy.Common.Helpers
                 return false;
             }
 
-            var cronExpressionText = new Regex(@"[A-Z]*", RegexOptions.Compiled);
+            // todo:
+            // var cronExpressionText = new Regex(@"", RegexOptions.Compiled);
 
-            var isValidated = cronExpressionText.IsMatch(text);
+            // var isValidated = cronExpressionText.IsMatch(text);
+            var isValidated = true;
 
             return isValidated;
         }
 
         public static bool IsNotValidCronExpression(this string text)
         {
-            return !IsValidPassword(text);
+            return !IsValidCronExpression(text);
         }
 
         public static string TrimOrDefault(this string text)
