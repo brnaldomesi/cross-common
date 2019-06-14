@@ -63,8 +63,9 @@ namespace Snappy.Common.Enumerations.Base
         public static bool IsValueNotValid<T>(int value) where T : Enumeration
         {
             var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
-            foreach (var field in fields)
+            for (var i = 0; i < fields.Length; i++)
             {
+                var field = fields[i];
                 if (field.GetValue(null).ToString() == FromValue<T>(value).ToString())
                 {
                     return false;
