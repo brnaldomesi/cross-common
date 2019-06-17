@@ -2,7 +2,7 @@
 {
     public abstract class BaseAuthenticatedRequest : BaseRequest
     {
-        public long CurrentUserId { get; set; }
+        public long CurrentUserId { get;  }
 
         protected BaseAuthenticatedRequest(long currentUserId)
         {
@@ -10,7 +10,7 @@
             {
                 ThrowArgumentException(nameof(currentUserId), currentUserId);
             }
-
+            
             CurrentUserId = currentUserId;
         }
     }
