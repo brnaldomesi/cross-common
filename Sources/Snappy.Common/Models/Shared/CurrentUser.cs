@@ -19,6 +19,7 @@ namespace Snappy.Common.Models.Shared
         public bool IsActionSucceed { get; set; }
 
         public List<RoleInfo> Roles { get; set; }
+        public Guid MenuUid { get; set; }
 
         public CurrentUser()
         {
