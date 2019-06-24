@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Snappy.Common.Enumerations;
 using Snappy.Common.Models.DataTransferObjects;
@@ -57,6 +58,7 @@ namespace Snappy.Common.Models.Responses
 
     public abstract class BaseResponse<T> : BaseResponse where T : BaseDto, new()
     {
+        public Guid ItemUid { get; set; }
         public T Item { get; set; }
         public List<T> Items { get; set; }
 
