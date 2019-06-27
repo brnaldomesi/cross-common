@@ -70,6 +70,25 @@ namespace Snappy.Common.Helpers
             return !IsEmpty(text);
         }
 
+        public static bool IsTrue(this string text)
+        {
+            if (text.IsNotEmpty()
+                && (text.ToLowerInvariant() == "true"
+                    || text == "1"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool IsFalse(this string text)
+        {
+            return !IsTrue(text);
+        }
+
         public static bool IsUrl(this string text)
         {
             var result = Uri.TryCreate(text, UriKind.Absolute, out var uriResult)
