@@ -41,6 +41,14 @@ namespace Snappy.Common.Enumerations.Base
             return item;
         }
 
+        public static T Get<T>(string displayName)
+            where T : Enumeration
+        {
+            var item = GetAll<T>().Find(x => x.DisplayName == displayName);
+
+            return item;
+        }
+
         public override bool Equals(object obj)
         {
             var otherValue = obj as Enumeration;
