@@ -72,6 +72,7 @@ namespace Snappy.Common.Helpers
 
         public static bool IsTrue(this string text)
         {
+            text = text.TrimOrDefault();
             if (text.IsNotEmpty()
                 && (text.ToLowerInvariant() == "true"
                     || text == "1"))
