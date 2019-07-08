@@ -49,6 +49,12 @@ namespace Snappy.Common.Models.Responses
             ErrorMessages.Add("action_is_invalid_because_parent_entity_is_not_active");
         }
 
+        public void SetInvalidBecauseEntityNotActive()
+        {
+            Status = ResponseStatus.Invalid;
+            ErrorMessages.Add("action_is_invalid_because_entity_is_not_active");
+        }
+
         public void SetFailed()
         {
             Status = ResponseStatus.Failed;
