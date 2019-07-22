@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Snappy.Common.Helpers;
 
 namespace Snappy.Common.Enumerations.Base
 {
@@ -10,14 +9,26 @@ namespace Snappy.Common.Enumerations.Base
     public abstract class Enumeration : IComparable
     {
         public int Value { get; }
+        public Guid Uid { get; }
         public string DisplayName { get; }
         public string Description { get; }
 
         protected Enumeration() { }
-        protected Enumeration(int value, string displayName, string description = "")
+
+        protected Enumeration(int value, string name)
         {
+            Uid = new Guid();
             Value = value;
-            DisplayName = displayName;
+            DisplayName = name;
+        }
+
+        protected Enumeration(int value, Guid uid, string name) : this(value, name)
+        {
+            Uid = uid;
+        }
+
+        protected Enumeration(int value, Guid uid, string name, string description) : this(value, uid, name)
+        {
             Description = description;
         }
 
@@ -26,23 +37,20 @@ namespace Snappy.Common.Enumerations.Base
             return DisplayName;
         }
 
-        public static List<T> GetAll<T>()
-               where T : Enumeration
+        public static List<T> GetAll<T>() where T : Enumeration
         {
             var fields = typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
             return fields.Select(f => f.GetValue(null)).Cast<T>().ToList();
         }
 
-        public static T Get<T>(Guid uid)
-            where T : Enumeration, IEnumerationWithUid
+        public static T Get<T>(Guid uid) where T : Enumeration
         {
             var item = GetAll<T>().Find(x => x.Uid == uid);
 
             return item;
         }
 
-        public static T Get<T>(string displayName)
-            where T : Enumeration
+        public static T Get<T>(string displayName) where T : Enumeration
         {
             var item = GetAll<T>().Find(x => x.DisplayName == displayName);
 
