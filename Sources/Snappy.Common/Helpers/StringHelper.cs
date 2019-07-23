@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
@@ -22,14 +21,19 @@ namespace Snappy.Common.Helpers
         /// <returns></returns>
         public static bool IsValidPassword(this string text)
         {
-            var hasNumber = new Regex(@"[0-9]+");
-            var hasLowerChar = new Regex(@"[a-z]+");
-            var hasUpperChar = new Regex(@"[A-Z]+");
+            if (string.IsNullOrWhiteSpace(text)
+                || text.Length < 8)
+            {
+                return false;
+            }
+
+            var hasNumber = new Regex(@"[0-9]+", RegexOptions.Compiled);
+            var hasLowerChar = new Regex(@"[a-z]+", RegexOptions.Compiled);
+            var hasUpperChar = new Regex(@"[A-Z]+", RegexOptions.Compiled);
 
             var isValidated = hasNumber.IsMatch(text)
                               && hasUpperChar.IsMatch(text)
-                              && hasLowerChar.IsMatch(text)
-                              && text.Length > 7;
+                              && hasLowerChar.IsMatch(text);
             return isValidated;
         }
 
@@ -56,35 +60,6 @@ namespace Snappy.Common.Helpers
             return !IsEmail(text);
         }
 
-        public static bool IsUid(this string text)
-        {
-            var isValid = Guid.TryParse(text, out Guid uid);
-            return isValid;
-        }
-
-        public static bool IsNotUid(this string text)
-        {
-            return !IsUid(text);
-        }
-
-        public static void ValidateUid(this string text)
-        {
-            if (IsUid(text))
-            {
-                return;
-            }
-
-            var method = new StackTrace().GetFrame(1).GetMethod();
-
-            throw new ArgumentException($"the uid is not valid > {text} [{method.DeclaringType}.{method.Name}]");
-        }
-
-        public static string GetNewUid()
-        {
-            var uid = Guid.NewGuid().ToString("N").ToUpper();
-            return uid;
-        }
-
         public static bool IsEmpty(this string text)
         {
             return string.IsNullOrWhiteSpace(text);
@@ -93,6 +68,26 @@ namespace Snappy.Common.Helpers
         public static bool IsNotEmpty(this string text)
         {
             return !IsEmpty(text);
+        }
+
+        public static bool IsTrue(this string text)
+        {
+            text = text.TrimOrDefault();
+            if (text.IsNotEmpty()
+                && (text.ToLowerInvariant() == "true"
+                    || text == "1"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool IsFalse(this string text)
+        {
+            return !IsTrue(text);
         }
 
         public static bool IsUrl(this string text)
@@ -106,6 +101,59 @@ namespace Snappy.Common.Helpers
         public static bool IsNotUrl(this string text)
         {
             return !IsUrl(text);
+        }
+
+        /// <summary>
+        /// Checks if a string is cron expression 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static bool IsValidCronExpression(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return false;
+            }
+
+            // todo:
+            // var cronExpressionText = new Regex(@"", RegexOptions.Compiled);
+
+            // var isValidated = cronExpressionText.IsMatch(text);
+            var isValidated = true;
+
+            return isValidated;
+        }
+
+        public static bool IsNotValidCronExpression(this string text)
+        {
+            return !IsValidCronExpression(text);
+        }
+
+        public static string TrimOrDefault(this string text)
+        {
+            return text == null ? string.Empty : text.Trim();
+        }
+
+        public static string CleanWhitespaces(this string text)
+        {
+            return Regex.Replace(text, @"\s+", "");
+        }
+
+        /// <summary>
+        /// checks if .xls, .xlsx or .csv
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static bool IsBasicDataUploadExtension(this string text)
+        {
+            return text == ".csv"
+                   || text == ".xls"
+                   || text == ".xlsx";
+        }
+
+        public static bool IsNotBasicDataUploadExtension(this string text)
+        {
+            return !IsBasicDataUploadExtension(text);
         }
     }
 }

@@ -34,9 +34,19 @@ namespace Snappy.Common.Helpers
             return GetRandomData(128);
         }
 
+        public string GetSaltAsString()
+        {
+            return Convert.ToBase64String(GetSalt());
+        }
+
         public byte[] GetKey()
         {
             return GetRandomData(256);
+        }
+
+        public string GetKeyAsString()
+        {
+            return Convert.ToBase64String(GetKey());
         }
 
         public byte[] GetIV()
@@ -44,9 +54,9 @@ namespace Snappy.Common.Helpers
             return GetRandomData(128);
         }
 
-        public string GetSaltAsString()
+        public string GetIVAsString()
         {
-            return Convert.ToBase64String(GetSalt());
+            return Convert.ToBase64String(GetIV());
         }
 
         public string ConvertToString(byte[] text)
@@ -59,10 +69,18 @@ namespace Snappy.Common.Helpers
             return Convert.FromBase64CharArray(text.ToCharArray(), 0, text.Length);
         }
 
-        public string Hash(string text, string salt)
+        public virtual string Hash(string text, string salt)
         {
             var hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(text, ConvertToByteArray(salt), KeyDerivationPrf.HMACSHA512, 28657, 256 / 8));
             return hashed;
+        }
+
+        public string Encrypt(string text, string keyString, string ivString)
+        {
+            var key = ConvertToByteArray(keyString);
+            var iv = ConvertToByteArray(ivString);
+
+            return Encrypt(text, key, iv);
         }
 
         public string Encrypt(string text, byte[] key, byte[] iv)
@@ -134,6 +152,14 @@ namespace Snappy.Common.Helpers
             }
 
             return Encoding.UTF8.GetString(result, 0, decryptedByteCount);
+        }
+
+        public string Decrypt(string text, string keyString, string ivString)
+        {
+            var key = ConvertToByteArray(keyString);
+            var iv = ConvertToByteArray(ivString);
+
+            return Decrypt(text, key, iv);
         }
 
         private static void ValidateParameters(string text, byte[] key, byte[] iv)
