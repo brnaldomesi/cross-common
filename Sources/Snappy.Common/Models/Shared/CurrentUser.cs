@@ -21,6 +21,7 @@ namespace Snappy.Common.Models.Shared
         public List<RoleInfo> Roles { get; set; }
         public Guid MenuUid { get; set; }
         public string LanguageCode { get; set; }
+        public int MaxTabCount { get; set; }
 
         public CurrentUser()
         {
